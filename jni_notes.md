@@ -43,12 +43,21 @@ Notice that we're including the location of JAVA_HOME/include, are creating a sh
 
 ## Using Torch from Java
 
+### JNI Version of the Factorial Example
+
 We're going to adapt the earlier example where we compute the factorial of a number. This is on the jni-example branch. You can build and run in the ```jni-example``` directory by using this:
 
 ```make && java FactorialJNI <full path to libfactorial.dylib> <int of your choice>```
 
+### Using Torch Tensors via the JNI
 
-Note, there is an issue using 64-bit LuaJIT on macOS:
+
+
+
+--
+
+
+**Note: There is an issue using 64-bit LuaJIT on macOS**, which is why I switched this from using LuaJIT to Lua. Info is found below. An earlier version of this repo contains the LuaJIT version which was affected by the issue mentioned below.
 
 - http://comments.gmane.org/gmane.comp.lang.lua.luajit/4817
 - http://stackoverflow.com/questions/14840569/sigsegv-error-in-some-lua-c-code
